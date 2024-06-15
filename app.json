@@ -1,30 +1,66 @@
 {
   "expo": {
-    "name": "favorite-places-app",
+    "name": "Your Favorite Places",
     "slug": "favorite-places-app",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#221c30"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "buildNumber": "1.0.2",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow the app to access your photos.",
+        "NSPhotoLibraryAddUsageDescription": "Allow the app to save photos."
+      }
     },
     "android": {
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_MEDIA_LOCATION"
+      ],
+      "package": "com.devsasa.yourfavoriteplacesapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "The app needs access to your camera in order to take photos.",
+          "photosPermission": "The app needs access to your photo gallery."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow the app to access your photos.",
+          "savePhotosPermission": "Allow the app to save photos.",
+          "isAccessMediaLocationEnabled": "true"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "adc59cda-8cbe-451e-aff5-ea88bb5d449b"
+      }
+    },
+    "owner": "devsasa"
   }
 }
